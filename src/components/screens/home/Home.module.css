@@ -1,8 +1,10 @@
-.cars{
+.cards{
    width: 100%;
-   display: flex; 
-   background-color: blueviolet;
-  
+   display: flex;
+   flex-wrap: wrap; 
+   align-items: center;
+   justify-content: center;
+
 }
 .card{
     border: 2px solid white;
