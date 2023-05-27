@@ -5,6 +5,9 @@ import Card from './card/Card'
 
 
 const Home = () => {
+    const filteredCars = React.useMemo(() => cars.filter(car => car.price < 15000), [])
+    console.log(filteredCars)
+    console.log('render')
   return (
     <div className={styles.cards}>
         {cars.length ? cars.map( car =>  
