@@ -1,19 +1,33 @@
 import React from 'react'
 import styles from './Home.module.css'
-import {cars} from './cars.data'
+import {cards as cardData} from './cards.data'
 import Card from './card/Card'
+import CreateCardForm from './create-card-form/CreateCardForm'
 
 
 const Home = () => {
-    const filteredCars = React.useMemo(() => cars.filter(car => car.price < 15000), [])
-    console.log(filteredCars)
-    console.log('render')
+  const [cards, setCards] = React.useState(cardData)
+  console.log(cards)
+  
+    // const filteredCards = React.useMemo(
+    //     () => cardData.filter(car => card.price < 15000), []
+    // )
+    // console.log(filteredCards)
   return (
-    <div className={styles.cards}>
-        {cars.length ? cars.map( car =>  
-            <Card key = {car.id} car = {car} />
-        ) : <h3>There is Empty!</h3>}
+    <div>
+      <CreateCardForm setCards={setCards}/>
+      <div className={styles.cards}>
+          {cardData.length ? cardData.map( card =>  
+              <Card key = {card.id} card = {card} />
+          ) : <h3>There is Empty!</h3>}
+
+      </div>
     </div>
+     
+     
+      
+    
+    
   )
 }
 
