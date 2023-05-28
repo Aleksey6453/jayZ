@@ -8,6 +8,10 @@ import CreateCardForm from './create-card-form/CreateCardForm'
 const Home = () => {
   const [cards, setCards] = React.useState(cardData)
   console.log(cards)
+
+  React.useEffect(() => {
+    console.log('Effecte')
+  }, [cards])
   
     // const filteredCards = React.useMemo(
     //     () => cardData.filter(car => card.price < 15000), []
